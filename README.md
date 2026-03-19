@@ -1,4 +1,4 @@
-# Brain Tumor Segmentation with U-Net (PyTorch)
+# Brain Segmentation with U-Net (PyTorch)
 
 A PyTorch project for **binary brain tumor segmentation** using a custom **U-Net** model.
 
