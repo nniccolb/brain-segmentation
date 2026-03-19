@@ -1,21 +1,21 @@
 # Brain Segmentation with U-Net (PyTorch)
 
-A PyTorch project for **binary brain tumor segmentation** using a custom **U-Net** model.
+A PyTorch project for binary brain tumor segmentation using a custom U-Net model.
 
-The notebook trains a segmentation model on paired **MRI images** and **tumor masks**, supports reading the dataset from **Amazon S3**, and visualizes both ground-truth and predicted masks.
+The notebook trains a segmentation model on paired MRI images and tumor masks, supports reading the dataset from Amazon S3, and visualizes both ground-truth and predicted masks.
 
 ## Features
 
-- Custom **U-Net** implementation in PyTorch
-- **Binary segmentation** of brain tumor regions
+- Custom U-Net implementation in PyTorch
+- Binary segmentation of brain tumor regions
 - Dataset loader that supports:
   - local folders
-  - **Amazon S3** buckets/prefixes
+  - Amazon S3 buckets/prefixes
 - Image/mask preprocessing with `torchvision.transforms.v2`
 - Combined loss:
   - `BCEWithLogitsLoss`
   - custom `SoftDiceLoss`
-- Validation with **Dice score**
+- Validation with Dice score
 - Visualization of:
   - input image
   - ground-truth mask
@@ -129,7 +129,7 @@ lambda x: (x >= 128).long()
 
 ## Model
 
-The model is a custom **U-Net** with:
+The model is a custom U-Net with:
 
 - encoder blocks
 - decoder blocks
@@ -157,12 +157,6 @@ Checkpointing saves the best model to:
 ```text
 best_model.tar
 ```
-
-## Dice score
-
-Validation quality is measured with Dice score after thresholding predictions at `0.5`.
-
-This is appropriate for binary segmentation tasks where overlap between predicted and true tumor masks matters more than raw pixel accuracy.
 
 ## Visualization
 
